@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block contenido %}
+
+<div class="text-center">
+    <h1>Bienvenido a Mi Sistema</h1>
+    <p class="lead">Sistema web desarrollado con Flask y Bootstrap.</p>
+    <p>
+        En este sitio puedes registrar clientes, proveedores
+        e iniciar sesión.
+    </p>
+</div>
+
+<div class="row mt-4">
+<!-- Login -->
+    <div class="col-md-4">
+     <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Login</h5>
+                <p class="card-text">Ingresa al sistema.</p>
+                <a href="/login" class="btn btn-dark">Iniciar sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clientes -->
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Clientes</h5>
+                <p class="card-text">
+                    Registra la información de tus clientes.
+                </p>
+                <a href="/clientes" class="btn btn-primary">Ir a Clientes</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proveedores -->
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Proveedores</h5>
+                <p class="card-text">
+                    Registra la información de tus proveedores.
+                </p>
+                <a href="/proveedores" class="btn btn-success">Ir a Proveedores</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
