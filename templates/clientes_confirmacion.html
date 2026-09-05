@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Confirmación{% endblock %}
+
+{% block contenido %}
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="clienteToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+         data-bs-autohide="true" data-bs-delay="5000">
+        <div class="toast-header">
+            <strong class="me-auto">Mi Sistema</strong>
+            <small class="text-body-secondary">Ahora</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+        </div>
+        <div class="toast-body">
+            El cliente fue registrado correctamente.
+        </div>
+    </div>
+</div>
+
+<h1>Cliente registrado</h1>
+
+<div class="alert alert-success" role="alert">
+    Los datos del cliente fueron recibidos correctamente.
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Datos recibidos</h5>
+
+        <table class="table">
+            <tr>
+                <th>Nombre</th>
+                <td>{{ nombre }}</td>
+            </tr>
+            <tr>
+                <th>NIT</th>
+                <td>{{ nit }}</td>
+            </tr>
+            <tr>
+                <th>Correo</th>
+                <td>{{ correo }}</td>
+            </tr>
+            <tr>
+                <th>Teléfono</th>
+                <td>{{ telefono }}</td>
+            </tr>
+            <tr>
+                <th>Dirección</th>
+                <td>{{ direccion }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="alert alert-warning mt-3">
+    <strong>Importante:</strong>
+    estos datos todavía no se guardan de forma permanente.
+</div>
+
+<a href="/clientes" class="btn btn-primary">
+    Registrar otro cliente
+</a>
+
+<script>
+    const clienteToast = document.getElementById('clienteToast');
+    const toast = new bootstrap.Toast(clienteToast);
+    toast.show();
+</script>
+
+{% endblock %}
